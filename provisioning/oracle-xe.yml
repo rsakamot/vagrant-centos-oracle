@@ -23,3 +23,5 @@
     - name: set oracle listener
       shell: ORACLE_HOME=/u01/app/oracle/product/11.2.0/xe /u01/app/oracle/product/11.2.0/xe/bin/sqlplus
         system/manager@localhost < /vagrant/oracle/set_listener.sql
+    - name: add groups to dba
+      user: name=vagrant append=yes groups=vagrant,wheel,dba
